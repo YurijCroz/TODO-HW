@@ -1,0 +1,208 @@
+/*Обнуление*/
+*{padding:0;margin:0;border:0;}
+*,*:before,*:after{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;}
+:focus,:active{outline:none;}
+a:focus,a:active{outline:none;}
+nav,footer,header,aside{display:block;}
+html,body{height:100%;width:100%;font-size:100%;line-height:1;font-size:14px;-ms-text-size-adjust:100%;-moz-text-size-adjust:100%;-webkit-text-size-adjust:100%;}
+input,button,textarea{font-family:inherit;}
+input::-ms-clear{display:none;}
+button{cursor:pointer;}
+button::-moz-focus-inner{padding:0;border:0;}
+a,a:visited{text-decoration:none;}
+a:hover{text-decoration:none;}
+ul li{list-style:none;}
+img{vertical-align:top;}
+h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit;}
+/*--------------------*/
+
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+}
+
+.wrapper{
+    padding: 5px;
+    width: 100vw;
+    min-height: 100vh;
+    background-color: #ffbd52;
+    background-image: linear-gradient(135deg, #ffbd52 25%, #FFE32C 100%);
+    border: 5px solid;
+    border-image-source: linear-gradient(315deg, #ffbd52 25%, #FFE32C 100%);
+    border-image-slice: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.container {
+    margin: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#task{
+    width: 400px;
+    height: 30px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    border-bottom: 3px solid gray;
+    border-right: 2px solid gray;
+}
+
+button {
+    margin: 5px;
+    width: 80px;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    border-bottom: 3px solid gray;
+    border-right: 2px solid gray;
+    font-size: 16px;
+    background-image: linear-gradient(to right, #FF8008 0%, #FFC837  51%, #FF8008  100%);
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+}
+
+button:hover {
+    background-position: right center;
+    color: #fff;
+}
+
+#tasks{
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+}
+
+#tasks li{
+    width: 230px;
+    min-height: 300px;
+    margin: 10px 15px 10px 5px;
+    padding: 5px;
+    background-color: #FFC837;
+    background-image: linear-gradient(45deg, #ffbd52 25%, #FFE32C 100%);
+    border: 1px solid #FF8008;
+    position: relative;
+}
+
+.text{
+    margin-top: 5px;
+    word-wrap: break-word;
+    cursor: pointer;
+    user-select: none;
+}
+
+.crossOut{
+    text-decoration: line-through;
+}
+
+.textDate {
+    text-align: center;
+    font-size: 10px;
+    color: gray;
+    height: 25px;
+    padding-top: 7px;
+}
+
+.check{
+    display: block;
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    cursor: pointer;
+    opacity: 0;
+}
+
+.checkCustom {
+    display: block;
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+.check:checked ~ .checkbox{
+    transform: rotate(45deg);
+    width: 10px;
+    margin-left: 8px;
+    border-color: #FF8008;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    border-radius: 0;
+}
+
+.checkbox{
+    display: block;
+    width: inherit;
+    height: inherit;
+    border: 1px solid gray;
+    border-radius: 4px;
+    transition: all 400ms;
+    cursor: pointer;
+}
+
+
+.buttonEdit {
+    display: block;
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+}
+
+.checkBtn {
+    display: block;
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    cursor: pointer;
+    opacity: 0;
+}
+
+.checkBtn:checked ~ .spanBtn {
+    color: green;
+    animation-name: button-active;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-duration: 500ms;
+}
+
+.spanBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: inherit;
+    height: inherit;
+    border: 1px solid gray;
+    border-bottom: 1.5px solid gray;
+    border-right: 1.5px solid gray;
+    border-radius: 4px;
+    background-color: #ffbd52;
+    transition: all 200ms;
+    cursor: pointer;
+    color: red;
+}
+
+@keyframes button-active{
+    0%{
+        border-bottom: 1.5px solid gray;
+        border-right: 1.5px solid gray;
+    }
+    50%{
+        border-bottom: 1px solid gray;
+        border-right: 1px solid gray;
+    }
+    100%{
+        border-bottom: 1.5px solid gray;
+        border-right: 1.5px solid gray;
+    }
+}
